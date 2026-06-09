@@ -1,0 +1,24 @@
+{
+  "name": "socratic-coding",
+  "description": "Socratic thinking-guidance for AI coding agents: clarify the real problem, surface hidden assumptions, and converge on an approach before writing code — instead of chaotic coding.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rzx00",
+    "email": "2943894881@qq.com"
+  },
+  "homepage": "https://github.com/RZX00/socratic-skills",
+  "repository": "https://github.com/RZX00/socratic-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "socratic",
+    "thinking",
+    "clarification",
+    "plan-mode",
+    "requirements",
+    "coding-agent",
+    "claude-code",
+    "codex"
+  ],
+  "skills": "./skills"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "socratic-skills",
+  "owner": {
+    "name": "rzx00",
+    "url": "https://github.com/RZX00"
+  },
+  "metadata": {
+    "description": "Socratic thinking-guidance skills for AI coding agents — clarify the real problem before you write code, instead of diving into chaotic coding",
+    "version": "1.0.0",
+    "repository": "https://github.com/RZX00/socratic-skills"
+  },
+  "plugins": [
+    {
+      "name": "socratic-coding",
+      "description": "Use when a coding request is vague, open-ended, architectural, large/cross-cutting, or you are in plan mode — runs a Socratic clarification pass (real problem, hidden assumptions, success criteria) before writing code, then converges and executes. Skips trivial well-specified changes.",
+      "source": "./"
+    }
+  ]
+}
