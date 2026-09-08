@@ -1,21 +1,26 @@
-# socratic-coding installer (Windows / PowerShell)
+# socratic-thinking installer (Windows / PowerShell)
 # Usage:  irm https://raw.githubusercontent.com/RZX00/socratic-skills/main/install.ps1 | iex
 #Requires -Version 5
 $ErrorActionPreference = 'Stop'
 
-$RawUrl = 'https://raw.githubusercontent.com/RZX00/socratic-skills/main/skills/socratic-coding/SKILL.md'
+$RawUrl = 'https://raw.githubusercontent.com/RZX00/socratic-skills/main/skills/socratic-thinking/SKILL.md'
 $Targets = @(
-    (Join-Path $HOME '.claude\skills\socratic-coding'),  # Claude Code
-    (Join-Path $HOME '.agents\skills\socratic-coding')    # Codex
+    (Join-Path $HOME '.claude\skills\socratic-thinking'),  # Claude Code
+    (Join-Path $HOME '.agents\skills\socratic-thinking')    # Codex
 )
 
-Write-Host 'Installing the socratic-coding skill...' -ForegroundColor Cyan
+Write-Host 'Installing the socratic-thinking skill...' -ForegroundColor Cyan
 $content = (Invoke-WebRequest -Uri $RawUrl -UseBasicParsing).Content
+$metadataUrl = $RawUrl.Replace('/SKILL.md', '/agents/openai.yaml')
+$metadata = (Invoke-WebRequest -Uri $metadataUrl -UseBasicParsing).Content
 
 foreach ($dir in $Targets) {
-    New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    New-Item -ItemType Directory -Force -Path (Join-Path $dir 'agents') | Out-Null
     Set-Content -Path (Join-Path $dir 'SKILL.md') -Value $content -Encoding UTF8
+    Set-Content -Path (Join-Path $dir 'agents/openai.yaml') -Value $metadata -Encoding UTF8
     Write-Host "  installed -> $dir" -ForegroundColor Green
 }
 
-Write-Host 'Done. Restart Claude Code / Codex, then the skill auto-activates on vague or plan-mode coding requests.' -ForegroundColor Cyan
+Write-Host 'Done. Restart Claude Code / Codex, then invoke socratic-thinking or ask to think through an open question.' -ForegroundColor Cyan
+
+Write-Host 'Upgrading? Back up custom edits and remove the old socratic-coding skill separately.'

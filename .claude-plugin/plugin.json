@@ -1,7 +1,7 @@
 {
-  "name": "socratic-coding",
-  "description": "Socratic thinking-guidance for AI coding agents: clarify the real problem, surface hidden assumptions, and converge on an approach before writing code — instead of chaotic coding.",
-  "version": "1.0.0",
+  "name": "socratic-thinking",
+  "description": "Help people examine assumptions, explore evidence and tradeoffs, and form their own judgment across domains.",
+  "version": "2.0.0",
   "author": {
     "name": "rzx00",
     "email": "2943894881@qq.com"
@@ -13,10 +13,7 @@
     "skills",
     "socratic",
     "thinking",
-    "clarification",
-    "plan-mode",
-    "requirements",
-    "coding-agent",
+    "decision-making",
     "claude-code",
     "codex"
   ],
