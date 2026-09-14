@@ -6,7 +6,8 @@ set -euo pipefail
 RAW_URL="https://raw.githubusercontent.com/RZX00/socratic-skills/main/skills/socratic-thinking/SKILL.md"
 TARGETS=(
   "$HOME/.claude/skills/socratic-thinking"   # Claude Code
-  "$HOME/.agents/skills/socratic-thinking"   # Codex
+  "$HOME/.agents/skills/socratic-thinking"   # Codex / Agent skills
+  "$HOME/.codex/skills/socratic-thinking"    # Codex desktop skills
 )
 
 echo "Installing the socratic-thinking skill..."
@@ -14,6 +15,12 @@ content="$(curl -fsSL "$RAW_URL")"
 metadata="$(curl -fsSL "${RAW_URL%/SKILL.md}/agents/openai.yaml")"
 
 for dir in "${TARGETS[@]}"; do
+  # Clean up deprecated socratic-coding in the same parent directory
+  parent_dir="$(dirname "$dir")"
+  if [ -d "$parent_dir/socratic-coding" ]; then
+    rm -rf "$parent_dir/socratic-coding"
+    echo "  removed deprecated -> $parent_dir/socratic-coding"
+  fi
   mkdir -p "$dir/agents"
   printf '%s' "$content" > "$dir/SKILL.md"
   printf '%s' "$metadata" > "$dir/agents/openai.yaml"

@@ -39,7 +39,8 @@ curl -fsSL https://raw.githubusercontent.com/RZX00/socratic-skills/main/install.
 The scripts install both locations. You can download and inspect them before running.
 
 - Claude Code: `~/.claude/skills/socratic-thinking/`
-- Codex: `~/.agents/skills/socratic-thinking/`
+- Codex / Agent skills: `~/.agents/skills/socratic-thinking/`
+- Codex Desktop: `~/.codex/skills/socratic-thinking/`
 
 手动安装时，将整个 `skills/socratic-thinking/` 目录复制到上述位置。
 For manual installation, copy the entire skill directory to the appropriate location.
@@ -65,7 +66,7 @@ For manual installation, copy the entire skill directory to the appropriate loca
 
 Version 2 renames the skill and plugin from `socratic-coding` to `socratic-thinking`. The repository remains `RZX00/socratic-skills`.
 
-旧版用户先备份自行修改的内容，再移除原 `socratic-coding` 安装，安装新版。脚本保留旧目录，不会自动删除你的文件；同时启用两个版本可能带来重复或矛盾指令。
+旧版用户先备份自行修改的内容。新版安装脚本会自动清理各技能目录下的旧版 `socratic-coding` 目录，防止两者同时存在造成指令矛盾或触发覆盖。
 
 Back up custom edits, remove the old skill from the agent directories you used, and install the new version. Installers preserve old directories.
 
