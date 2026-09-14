@@ -74,7 +74,7 @@ Version 2 renames the skill and plugin from `socratic-coding` to `socratic-think
 
 Back up custom edits, remove the old skill from the agent directories you used, and install the new version. Installers preserve old directories.
 
-For a plugin installation, uninstall `socratic-coding@socratic-skills`, refresh the marketplace, and install `socratic-thinking@socratic-skills`.
+
 
 ## 卸载 / Uninstall
 
