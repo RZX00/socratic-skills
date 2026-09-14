@@ -1,5 +1,9 @@
 # Socratic Thinking
 
+![Socratic Thinking banner](assets/banner.png)
+
+# Socratic Thinking
+
 帮助人思考，形成自己的判断。适用于产品、研究、写作、运营、个人决策和编程。
 
 A portable Agent Skill that helps people clarify open questions, examine assumptions, and form their own judgment across domains. It contributes evidence and perspective while leaving goals, values, and consequential choices with the user.
